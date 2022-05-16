@@ -24,5 +24,4 @@ const ApiFetch = () => {
 		</div>
 	);
 };
-
 export default ApiFetch;
