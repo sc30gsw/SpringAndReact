@@ -1,26 +1,28 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 
 const ApiFetch = () => {
+	const [stones, setStone] = useState([]);
 
-    const [posts, setPosts] = useState([])
+	useEffect(() => {
+		// APIをfetchする(呼び出す)
+		fetch("http://localhost:8080/api", { method: "GET" })
+			// レスポンスのデータ形式をjsonに設定
+			.then((res) => res.json())
+			// APIから渡されるレスポンスデータ(data)をstateにセットする
+			.then((data) => {
+				setStone(data);
+			});
+	}, []);
 
-    useEffect(() => {
-        fetch('http://localhost:8080/api/hello', {method: 'GET'})
-        .then(res => res.json())
-        .then(data => {
-            setPosts(data)
-        })
-    },[])
+	return (
+		<div>
+			<ul>
+				<li>{stones.month}</li>
+				<li>{stones.color}</li>
+				<li>{stones.name}</li>
+			</ul>
+		</div>
+	);
+};
 
-    return (
-        <div>
-            <ul>
-				<li>{posts.month}</li>
-				<li>{posts.color}</li>
-				<li>{posts.name}</li>
-            </ul>
-        </div>
-    )
-}
-
-export default ApiFetch
+export default ApiFetch;
