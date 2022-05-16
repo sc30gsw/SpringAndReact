@@ -11,10 +11,13 @@ import com.example.demo.domain.entity.BirthStone;
 @CrossOrigin(origins = "*") 
 public class HelloController {
 	
-    @GetMapping("/api/hello")
+    @GetMapping("/api")
     @ResponseBody
     public BirthStone getBirthStone() {
-        BirthStone birthStone = new BirthStone("2月", "アメジスト", "紫");
+        BirthStone birthStone = new BirthStone();
+        birthStone.setMonth("2月");
+        birthStone.setName("アメジスト");
+        birthStone.setColor("紫");
         return birthStone;
     }
 }

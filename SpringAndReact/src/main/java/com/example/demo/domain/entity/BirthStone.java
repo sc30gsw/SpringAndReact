@@ -18,10 +18,4 @@ public class BirthStone implements Serializable {
     /** 色 */
     private String color;
 
-    public BirthStone (String month, String name, String color) {
-        this.month = month;
-        this.name = name;
-        this.color = color;
-    }
-
 }
