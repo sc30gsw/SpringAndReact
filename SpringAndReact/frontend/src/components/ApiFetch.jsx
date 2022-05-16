@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const ApiFetch = () => {
+export const ApiFetch = () => {
 	const [stones, setStone] = useState([]);
 
 	useEffect(() => {
@@ -24,4 +24,3 @@ const ApiFetch = () => {
 		</div>
 	);
 };
-export default ApiFetch;
